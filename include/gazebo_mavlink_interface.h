@@ -344,13 +344,12 @@ private:
   common::Time last_actuator_time_;
 
   ///! Enumeration to use on the bitmask in HIL_SENSOR
-  enum SensorSource
-  {
-    ACCEL	= 0x0007,
-    GYRO	= 0x0038,
-    MAG	= 0x01C0,
-    BARO	= 0x1A00,
-    DIFF_PRESS= 0x0400
+  enum SensorSource {
+    ACCEL	= 0b111,
+    GYRO	= 0b111000,
+    MAG	= 0b111000000,
+    BARO	= 0b1101000000000,
+    DIFF_PRESS= 0b10000000000,
   };
 
   bool mag_updated_;
